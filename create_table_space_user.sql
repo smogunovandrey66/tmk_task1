@@ -1,0 +1,1 @@
+create tablespace garnet datafile 'garnet.dat' size 10M reuse autoextend on;
