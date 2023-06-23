@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FormMain: TFormMain
   Left = 0
   Top = 0
   Caption = 'FormMain'
-  ClientHeight = 264
-  ClientWidth = 569
+  ClientHeight = 395
+  ClientWidth = 590
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,15 +11,138 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object dbgrdCities: TDBGrid
-    Left = 48
-    Top = 16
-    Width = 441
-    Height = 169
-    DataSource = dsCities
+  object pnlFilter: TPanel
+    Left = 0
+    Top = 0
+    Width = 590
+    Height = 113
+    Align = alTop
     TabOrder = 0
+    ExplicitWidth = 577
+    object lblNameFirm: TLabel
+      Left = 76
+      Top = 17
+      Width = 115
+      Height = 13
+      Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080
+    end
+    object lblNameJurCity: TLabel
+      Left = 29
+      Top = 46
+      Width = 162
+      Height = 13
+      Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1072' '#1089' '#1102#1088'. '#1072#1076#1088#1077#1089#1086#1084
+    end
+    object lblNamePostCity: TLabel
+      Left = 20
+      Top = 75
+      Width = 171
+      Height = 13
+      Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1075#1086#1088#1086#1076#1072' '#1089' '#1087#1086#1095#1090'. '#1072#1076#1088#1077#1089#1086#1084
+    end
+    object edtNameFirm: TEdit
+      Left = 203
+      Top = 14
+      Width = 281
+      Height = 21
+      TabOrder = 0
+    end
+    object edtNameJurCity: TEdit
+      Left = 203
+      Top = 43
+      Width = 281
+      Height = 21
+      TabOrder = 1
+    end
+    object edtNamePostCity: TEdit
+      Left = 203
+      Top = 72
+      Width = 281
+      Height = 21
+      TabOrder = 2
+    end
+    object btnSearch: TBitBtn
+      Left = 496
+      Top = 12
+      Width = 78
+      Height = 25
+      Caption = #1055#1086#1080#1089#1082
+      Glyph.Data = {
+        06030000424D060300000000000036000000280000000F0000000F0000000100
+        180000000000D0020000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFA5A5A5141414FFFFFF000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB3B3B30000
+        00A2A2A2FFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7EFEFEFFF
+        FFFFFFFFFFFFFFFFACACAC000000B0B0B0FFFFFFFFFFFF000000FFFFFFFFFFFF
+        FFFFFFBABABA323232565656646464444444585858A5A5A5000000ABABABFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFF8A8A8A5C5C5CFFFFFFFFFFFFFFFFFFFF
+        FFFFF1F1F10000009E9E9EFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFDFDFDF
+        434343FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3A3A3AFFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFF525252F3F3F3FFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF6A6A6ADBDBDBFFFFFFFFFFFFFFFFFF000000FFFFFF414141
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC3C3C3929292FFFF
+        FFFFFFFFFFFFFF000000FFFFFF414141FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFC3C3C38D8D8DFFFFFFFFFFFFFFFFFF000000FFFFFF525252
+        F3F3F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6B6B6BD7D7D7FFFF
+        FFFFFFFFFFFFFF000000FFFFFFDEDEDE444444FFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D2DFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFF
+        8A8A8A5B5B5BFFFFFFFFFFFFFFFFFFFFFFFFEDEDED161616F8F8F8FFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFB9B9B932323256565663636344
+        44444A4A4AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFF9F9F9F1F1F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000}
+      TabOrder = 3
+      OnClick = btnSearchClick
+    end
+    object btnClear: TBitBtn
+      Left = 496
+      Top = 68
+      Width = 78
+      Height = 25
+      Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+      Glyph.Data = {
+        06030000424D060300000000000036000000280000000F0000000F0000000100
+        180000000000D0020000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF3A3A3A3C3C3C3F3F3F3F3F3F3F
+        3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3E3E3E545454000000FFFFFFFFFFFF
+        585858B1B1B1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFF515151000000FFFFFF8A8A8A7E7E7EFFFFFFFFFFFFFFFFFFBCBCBCFF
+        FFFFFFFFFFE4E4E4D6D6D6FFFFFFFFFFFFFFFFFF525252000000C6C6C6525252
+        FFFFFFFFFFFFFFFFFFFFFFFFE1E1E1232323F2F2F21B1B1BFEFEFEFFFFFFFFFF
+        FFFFFFFF525252000000121212FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF
+        CFCF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF525252000000C6C6C6525252
+        FFFFFFFFFFFFFFFFFFFFFFFFE1E1E1232323F2F2F21B1B1BFEFEFEFFFFFFFFFF
+        FFFFFFFF525252000000FFFFFF8A8A8A7F7F7FFFFFFFFFFFFFFFFFFFBCBCBCFF
+        FFFFFFFFFFE4E4E4D6D6D6FFFFFFFFFFFFFFFFFF525252000000FFFFFFFFFFFF
+        585858B1B1B1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFF515151000000FFFFFFFFFFFFFFFFFF3A3A3A3C3C3C3F3F3F3F3F3F3F
+        3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3E3E3E555555000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFF000000}
+      TabOrder = 4
+      OnClick = btnClearClick
+    end
+  end
+  object dbgrdData: TDBGrid
+    Left = 0
+    Top = 113
+    Width = 590
+    Height = 282
+    Align = alClient
+    DataSource = dsData
+    TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -28,12 +151,25 @@ object Form1: TForm1
     Columns = <
       item
         Expanded = False
-        FieldName = 'CITY_ID'
+        FieldName = 'NameFirm'
+        ReadOnly = True
+        Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080
+        Width = 200
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'NAME'
+        FieldName = 'JURCITY'
+        ReadOnly = True
+        Title.Caption = #1043#1086#1088#1086#1076' '#1089' '#1102#1088#1080#1076#1080#1095'. '#1072#1076#1088#1077#1089#1086#1084
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'POSTCITY'
+        Title.Caption = #1043#1086#1088#1086#1076' '#1089' '#1087#1086#1095#1090'. '#1072#1076#1088#1077#1089#1086#1084
+        Width = 150
         Visible = True
       end>
   end
@@ -43,20 +179,48 @@ object Form1: TForm1
       'Provider=MSDAORA.1;Password=w;User ID=chtpz;Data Source=127.0.0.' +
       '1;Persist Security Info=True'
     Provider = 'MSDAORA.1'
-    Left = 16
-    Top = 16
+    Left = 80
+    Top = 216
   end
-  object dsCities: TDataSource
-    DataSet = tblCities
-    Left = 208
-    Top = 96
+  object dsData: TDataSource
+    DataSet = qryData
+    Left = 256
+    Top = 216
   end
-  object tblCities: TADOTable
-    Active = True
+  object qryData: TADOQuery
     Connection = conMain
     CursorType = ctStatic
-    TableName = 'CITY'
-    Left = 312
-    Top = 104
+    Parameters = <
+      item
+        Name = 'firmName'
+        DataType = ftString
+        Size = -1
+        Value = Null
+      end
+      item
+        Name = 'cityPostName'
+        DataType = ftString
+        Size = -1
+        Value = Null
+      end
+      item
+        Name = 'cityJurName'
+        DataType = ftString
+        Size = -1
+        Value = Null
+      end>
+    SQL.Strings = (
+      
+        'select f.name as NameFirm, cj.name as JurCity, cp.name as PostCi' +
+        'ty '
+      'from firm f '
+      #9'inner join city cj on f.jur_city_id = cj.city_id '
+      #9'left join city cp on f.post_city_id = cp.city_id '
+      'where upper(f.name) like upper(:firmName) and'
+      '          upper(cp.name) like upper(:cityPostName) and'
+      '          upper(cj.name) like upper(:cityJurName)'
+      'order by f.firm_id')
+    Left = 168
+    Top = 216
   end
 end
