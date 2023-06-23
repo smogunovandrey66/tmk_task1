@@ -40,8 +40,9 @@ object Form1: TForm1
   object conMain: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=MSDASQL.1;Password=w;Persist Security Info=True;User ID' +
-      '=chtpz;Data Source=oracle_11_xe_64_user'
+      'Provider=MSDAORA.1;Password=w;User ID=chtpz;Data Source=127.0.0.' +
+      '1;Persist Security Info=True'
+    Provider = 'MSDAORA.1'
     Left = 16
     Top = 16
   end
