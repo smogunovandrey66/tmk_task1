@@ -22,7 +22,6 @@ object FormMain: TFormMain
     Height = 113
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 577
     object lblNameFirm: TLabel
       Left = 76
       Top = 17
@@ -152,7 +151,7 @@ object FormMain: TFormMain
     Columns = <
       item
         Expanded = False
-        FieldName = 'NameFirm'
+        FieldName = 'NAMEFIRM'
         ReadOnly = True
         Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080
         Width = 200
@@ -185,10 +184,11 @@ object FormMain: TFormMain
   end
   object dsData: TDataSource
     DataSet = qryData
-    Left = 256
+    Left = 288
     Top = 216
   end
   object qryData: TADOQuery
+    Active = True
     Connection = conMain
     CursorType = ctStatic
     Parameters = <
